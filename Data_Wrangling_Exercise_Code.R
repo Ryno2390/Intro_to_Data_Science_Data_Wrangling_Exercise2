@@ -1,4 +1,7 @@
-install.packages("readr")
+library(tidyr)
+library(dplyr)
 library(readr)
 
-read_csv("titanic_original.csv")
+Data <- read_csv("titanic_original.csv")
+
+Data$embarked <- replace(Data$embarked, is.na(Data$embarked), "S")
